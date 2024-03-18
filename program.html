@@ -11,19 +11,24 @@
       rel="stylesheet"
     />
     <script defer src="./script.js"></script>
-    <title>Day 1</title>
+    <title>Daily Struggle App</title>
   </head>
   <body>
     <div class="container">
       <div id="title"><b></b></div>
       <div id="content"></div>
       <div id="output-container"></div>
+      <div id="output" style="display: none;"></div>
+      <div id="timerElement" style="display: none;"></div>
 
       <div class="navigation">
-        <button id="previousBtn" onclick="previousDay()">Previous</button>
+        <button id="previousBtn" onclick="previousDay()" style="display: none;">
+          Previous
+        </button>
         <button id="home" onclick="goToHomePage()">Home</button>
         <button id="nextBtn" onclick="nextDay()">Next</button>
       </div>
     </div>
+    <!-- <script src="./test.js"></script> -->
   </body>
 </html>
