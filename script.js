@@ -167,11 +167,16 @@ function getRandomColor() {
 
 function updateTitleColor() {
   const title = document.getElementById('coloring');
-  title.style.color = getRandomColor(); // Set random color for the title
+  title.style.color = getRandomColor();
+}
+
+function updateOverlayColor() {
+  const overlay = document.getElementById('overlay');
+  overlay.style.color = getRandomColor(); // Set random color for the title
 }
 
 setInterval(updateTitleColor, 62.5);
-
+setInterval(updateOverlayColor, 70);
 // Call the updateTitleColor function every 500 milliseconds (0.5 seconds)
 
 function goToHomePage() {
