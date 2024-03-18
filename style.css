@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  background-image:url('/bground.png');
+  background-size: cover;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.navigation {
+  position: fixed;
+  bottom: 40px;  /* Adjust as needed */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); 
+}
+
+#output-container {
+  margin-top: 20px;
+  padding: 10px;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+h1 {
+  position: relative;
+  top: 200%;
+  right: 22.5%;
+  z-index: 2;  
+  font-family: "Yellowtail", cursive;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 47px;
+}
+
+
+
+#output-container h2 {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 35px;
+  font-weight: 400;
+  color: white;
+  background-color: rgba(0,0,0,0.78);
+  border-radius: 6px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  padding: 10px 15px;
+  
+ 
+}
+
+#output-container p {
+  margin-bottom: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  background-color: rgba(0,0,0,0.7);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+
+
+
+#output-container p:last-child {
+  margin-bottom: 0;
+}
+
+
+#startBtn button {
+  /* Reset background-related properties */
+  
+
+  border: 0.5px;
+  border-radius: 5%;
+  background-color: white;
+  background-position: 5% 50%;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 5px 20px;
+  
+  
+  width: min-content
+  
+}
+
+.navigation #previousBtn, #home, #nextBtn {
+  border: none;
+  border-radius: 5%;
+  background-color: white;
+  background-position: 5% 50%;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  padding: 5px 10px;
+  
+  width: min-content 
+}
+
+a {
+  font-size: 40px;
+  font-family: 'Montserrat', cursive;
+  color: silver;
+  border-radius: 5px;
+  padding: 0px 40px;
+  
+}
+
+
+

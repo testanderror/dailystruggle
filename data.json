@@ -1,0 +1,359 @@
+{
+  "DAY 1": [
+    {
+      "MOVEMENT": "Squats",
+      "TIME (min)": 10
+    },
+    {
+      "MOVEMENT": "Push Ups",
+      "TIME (min)": 10
+    },
+    {
+      "MOVEMENT": "Butterfly Sit Ups",
+      "TIME (min)": 4
+    }
+  ],
+  "DAY 2": [
+    {
+      "MOVEMENT": "Up Downs",
+      "TIME (min)": 0.6
+    },
+    {
+      "MOVEMENT": "Russian Twists",
+      "TIME (min)": 0.6
+    },
+    {
+      "MOVEMENT": "Shoulder Taps",
+      "TIME (min)": 0.6
+    },
+    {
+      "MOVEMENT": "Knee Tucks",
+      "TIME (min)": 0.6
+    },
+    {
+      "MOVEMENT": "Toes To Hands",
+      "TIME (min)": 0.6
+    },
+    {
+      "MOVEMENT": "Flutter Kicks",
+      "TIME (min)": 0.6
+    },
+    {
+      "MOVEMENT": "Mountain Climbers",
+      "TIME (min)": 0.6
+    },
+    {
+      "MOVEMENT": "Crossbody Toe Taps",
+      "TIME (min)": 0.6
+    },
+    {
+      "MOVEMENT": "Lunges",
+      "TIME (min)": 2.6
+    },
+    {
+      "MOVEMENT": "Burpees",
+      "TIME (min)": 2.6
+    }
+  ],
+  "DAY 3": [
+    {
+      "MOVEMENT": "Squats",
+      "TIME (min)": 3
+    },
+    {
+      "MOVEMENT": "Straight Leg Sit Ups",
+      "TIME (min)": 3
+    },
+    {
+      "MOVEMENT": "High Knees",
+      "TIME (min)": 3
+    },
+    {
+      "MOVEMENT": "Squat Jacks",
+      "TIME (min)": 3
+    },
+    {
+      "MOVEMENT": "Butterfly Sit Ups",
+      "TIME (min)": 3
+    },
+    {
+      "MOVEMENT": "Lateral Hops",
+      "TIME (min)": 3
+    }
+  ],
+  "DAY 4": [
+    {
+      "MOVEMENT": "Longevity Day",
+      "TIME (min)": 0
+    }
+  ],
+  "DAY 5": [
+    {
+      "MOVEMENT": "Bulgarian Squats",
+      "TIME (min)": 4
+    },
+    {
+      "MOVEMENT": "Russian Twists",
+      "TIME (min)": 4
+    },
+    {
+      "MOVEMENT": "Push Ups",
+      "TIME (min)": 3
+    },
+    {
+      "MOVEMENT": "Knee Tucks",
+      "TIME (min)": 4
+    }
+  ],
+  "DAY 6": [
+    {
+      "MOVEMENT": "Jumping Jacks",
+      "TIME (min)": 3
+    },
+    {
+      "MOVEMENT": "Seal Jacks",
+      "TIME (min)": 3
+    },
+    {
+      "MOVEMENT": "High Knees",
+      "TIME (min)": 3
+    },
+    {
+      "MOVEMENT": "Plank",
+      "TIME (min)": 2
+    },
+    {
+      "MOVEMENT": "Shoulder Taps",
+      "TIME (min)": 3
+    }
+  ],
+  "DAY 7": [
+    {
+      "MOVEMENT": "Longevity Day",
+      "TIME (min)": 0
+    }
+  ],
+  "DAY 8": [
+    {
+      "MOVEMENT": "Lunges",
+      "TIME (min)": 4
+    },
+    {
+      "MOVEMENT": "Push Ups",
+      "TIME (min)": 2.6
+    },
+    {
+      "MOVEMENT": "Jump Squats",
+      "TIME (min)": 2
+    },
+    {
+      "MOVEMENT": "Push Ups",
+      "TIME (min)": 2.6
+    },
+    {
+      "MOVEMENT": "Squats",
+      "TIME (min)": 2
+    },
+    {
+      "MOVEMENT": "Straight Leg Sit Ups",
+      "TIME (min)": 4
+    }
+  ],
+  "DAY 9": [
+    {
+      "MOVEMENT": "Lunges",
+      "TIME (min)": 6
+    },
+    {
+      "MOVEMENT": "Push Ups",
+      "TIME (min)": 6
+    },
+    {
+      "MOVEMENT": "Up Downs",
+      "TIME (min)": 6
+    }
+  ],    "DAY 10": [
+      {
+        "MOVEMENT": "Longevity Day",
+        "TIME (min)": 0
+      }
+    ],
+    "DAY 11": [
+      {
+        "MOVEMENT": "Left Plank",
+        "TIME (min)": 2
+      },
+      {
+        "MOVEMENT": "Right Plank",
+        "TIME (min)": 2
+      },
+      {
+        "MOVEMENT": "Plank To Push Up",
+        "TIME (min)": 2.6
+      },
+      {
+        "MOVEMENT": "Shoulder Taps",
+        "TIME (min)": 2.6
+      },
+      {
+        "MOVEMENT": "Toes To Hands",
+        "TIME (min)": 2.6
+      },
+      {
+        "MOVEMENT": "Mountain Climbers",
+        "TIME (min)": 2.6
+      },
+      {
+        "MOVEMENT": "High Knees",
+        "TIME (min)": 2.6
+      }
+    ],
+    "DAY 12": [
+      {
+        "MOVEMENT": "Longevity Day",
+        "TIME (min)": 0
+      }
+    ],
+    "DAY 13": [
+      {
+        "MOVEMENT": "Squats",
+        "TIME (min)": 9
+      },
+      {
+        "MOVEMENT": "Lunges",
+        "TIME (min)": 8
+      },
+      {
+        "MOVEMENT": "Straight Leg Sit Ups",
+        "TIME (min)": 4
+      }
+    ],
+    "DAY 14": [
+      {
+        "MOVEMENT": "Squats",
+        "TIME (min)": 8
+      },
+      {
+        "MOVEMENT": "Push Ups",
+        "TIME (min)": 8
+      },
+      {
+        "MOVEMENT": "Flutter Kicks",
+        "TIME (min)": 3
+      }
+    ],
+    "DAY 15": [
+      {
+        "MOVEMENT": "Longevity Day",
+        "TIME (min)": 0
+      }
+    ],
+    "DAY 16": [
+      {
+        "MOVEMENT": "Push Ups",
+        "TIME (min)": 5
+      },
+      {
+        "MOVEMENT": "Bulgarian Squats",
+        "TIME (min)": 10
+      },
+      {
+        "MOVEMENT": "Russian Twists",
+        "TIME (min)": 15
+      }
+    ],
+    "DAY 17": [
+      {
+        "MOVEMENT": "Longevity Day",
+        "TIME (min)": 0
+      }
+    ],
+    "DAY 18": [
+      {
+        "MOVEMENT": "Squats",
+        "TIME (min)": 10
+      },
+      {
+        "MOVEMENT": "Push Ups",
+        "TIME (min)": 10
+      }
+    ],
+    "DAY 19": [
+      {
+        "MOVEMENT": "Jumping Squats",
+        "TIME (min)": 6
+      },
+      {
+        "MOVEMENT": "Russian Twists",
+        "TIME (min)": 6
+      },
+      {
+        "MOVEMENT": "Mountain Climbers",
+        "TIME (min)": 6
+      },
+      {
+        "MOVEMENT": "High Knees",
+        "TIME (min)": 6
+      }
+    ],
+    "DAY 20": [
+      {
+        "MOVEMENT": "Longevity Day",
+        "TIME (min)": 0
+      }
+    ],
+    "DAY 21": [
+      {
+        "MOVEMENT": "Squats",
+        "TIME (min)": 5
+      },
+      {
+        "MOVEMENT": "Lunges",
+        "TIME (min)": 2.5
+      },
+      {
+        "MOVEMENT": "Squat Jacks",
+        "TIME (min)": 2.5
+      },
+      {
+        "MOVEMENT": "Push Ups",
+        "TIME (min)": 5
+      }
+    ],
+    "DAY 22": [
+      {
+        "MOVEMENT": "Left Plank",
+        "TIME (min)": 1.5
+      },
+      {
+        "MOVEMENT": "Right Plank",
+        "TIME (min)": 1.5
+      },
+      {
+        "MOVEMENT": "Steam Engines",
+        "TIME (min)": 1.5
+      },
+      {
+        "MOVEMENT": "Mountain Climbers",
+        "TIME (min)": 1.5
+      },
+      {
+        "MOVEMENT": "Lateral Hops",
+        "TIME (min)": 3
+      },
+      {
+        "MOVEMENT": "Burpees",
+        "TIME (min)": 3
+      },
+      {
+        "MOVEMENT": "Knee Tucks",
+        "TIME (min)": 3
+      }
+    ],
+    "DAY 23": [
+      {
+        "MOVEMENT": "Longevity Day",
+        "TIME (min)": 0
+      }
+    ]
+  }
