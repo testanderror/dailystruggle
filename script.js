@@ -91,7 +91,7 @@ function startStopwatch() {
 function nextDay() {
   // Ensure fetchProgramData() is called before accessing count
   fetchProgramData().then(() => {
-    
+    console.log(count);
     currentDay++;
     if (currentDay < count) {
       startProgram();
@@ -132,14 +132,16 @@ if (window.location.pathname.endsWith('program.html')) {
   startProgram();
 }
 
+if (window.location.pathname.endsWith('index.html')) {
+  document.getElementById('startBtn').addEventListener('click', () => {
+    window.location.href = 'program.html';
+  });
+}
+
 // Get the stopwatch timer element by its ID
 const stopwatchTimer = document.getElementById('btnTimer');
 
 // Add an event listener to the stopwatch timer
-stopwatchTimer.addEventListener('click', function () {
-  // This function will be called when the stopwatch timer is clicked
-  console.log('Stopwatch timer clicked!');
-});
 
 document.addEventListener('DOMContentLoaded', function () {
   // Get reference to the button
@@ -152,14 +154,35 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-function start() {
-  window.location.href = 'program.html';
+// coloring title
+
+function getRandomColor() {
+  // Generate random values for red, green, and blue channels
+  const red = Math.floor(Math.random() * 256);
+  const green = Math.floor(Math.random() * 256);
+  const blue = Math.floor(Math.random() * 256);
+  // Construct the RGB color string
+  return `rgb(${red}, ${green}, ${blue})`;
 }
+
+function updateTitleColor() {
+  const title = document.getElementById('coloring');
+  title.style.color = getRandomColor(); // Set random color for the title
+}
+
+setInterval(updateTitleColor, 62.5);
+
+// Call the updateTitleColor function every 500 milliseconds (0.5 seconds)
 
 function goToHomePage() {
   window.location.href = 'index.html';
 }
 
+function start() {
+  window.location.href = 'program.html';
+}
+
 fetchProgramData();
 updateButtonsVisibility();
+
 // getData();
