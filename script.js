@@ -1,6 +1,9 @@
 let currentDay = 0; // Start with Day 1
 let programData; // Variable to store the program data
-let count;
+let count = 0;
+let intervalId;
+let state;
+
 const previousButton = document.getElementById('previousBtn');
 const nextButton = document.getElementById('nextBtn');
 
@@ -10,7 +13,7 @@ function fetchProgramData() {
     .then((response) => response.json())
     .then((data) => {
       programData = data;
-      count = 0;
+
       for (const key in data) {
         if (key.includes('DAY')) {
           count++;
@@ -28,107 +31,95 @@ function setDayContent(content, dayNo) {
   dayContent.innerHTML = content;
 }
 
-// function startProgram() {
-//   // Fetch the program data from JSON file
-//   fetch('data.json')
-//     .then((response) => response.json())
-//     .then((data) => {
-//       console.log(data);
-//       setDayContent(data[currentDay].MOVEMENT, data[currentDay].DAY);
-//     })
-//     .catch((error) => console.error('Error loading program data:', error));
-// }
-
 function startProgram() {
   // Fetch the program data from JSON file
   fetch('data.json')
     .then((response) => response.json())
     .then((data) => {
+      var outputContainer = document.getElementById('output-container');
       var index = currentDay + 1;
-      var output = `<h2>Day ${index}</h2>`;
+      var output = `<div class='over'><h2><button id='btnTimer'>Day ${index}</button></h2></div>`;
       data[`DAY ${index}`].forEach((entry) => {
         output += `<p>${entry['MOVEMENT']} @ ${entry['TIME (min)']} min</p>`;
       });
 
       // Paste the output onto the DOM
-      document.getElementById('output-container').innerHTML = output;
+      outputContainer.innerHTML = output;
+      var btnTimer = document.getElementById('btnTimer');
+      btnTimer.classList.add('stopTimer');
+      btnTimer.addEventListener('click', startStopwatch);
     })
     .catch((error) => console.error('Error loading program data:', error));
 }
 
-// function startProgram() {
-//   // Fetch the program data from JSON file
-//   fetch('data.json')
-//     .then((response) => response.json())
-//     .then((data) => {
-//       var index = currentDay + 1;
-//       var days = [];
-//       data[`DAY ${index}`].forEach((entry) => days.push(entry['MOVEMENT']));
-//       console.log(days);
-//       // console.log(data[`DAY ${index}`]);
-//       // var days = data.days;
-//       const currentDayContent = days;
-//       const currentDayNumber = `DAY ${index}`;
-//       setDayContent(currentDayContent, currentDayNumber);
-//     })
-//     .catch((error) => console.error('Error loading program data:', error));
-// }
+function startStopwatch() {
+  const btnTimer = document.getElementById('btnTimer');
 
-// function startProgram2() {
-//   // Fetch the program data from JSON file
-//   fetch('data.json')
-//     .then((response) => response.json())
-//     .then((data) => {
-//       console.log(data);
-//     })
-//     .catch((error) => console.error('Error loading program data:', error));
-// }
-
-// AQUI QUEDE!!!!!! <<<<<< =------- TENGO QUE DEFINIR NUEVAMENTE CURRENTDAYCONTENT Y CURRENT DAY NUMBER
-function nextDay() {
-  currentDay++;
-  if (currentDay < count) {
-    startProgram();
-  } else {
-    // If currentDay exceeds the number of days in the program, reset to the last day
-    currentDay = count - 1;
+  // Check if the stopwatch is already running
+  if (intervalId) {
+    // Stop the stopwatch
+    clearInterval(intervalId);
+    intervalId = null; // Reset intervalId
+    btnTimer.textContent = `Day ${currentDay + 1}`; // Reset button text to original content
+    btnTimer.classList.remove('stopTimer'); // Remove the 'stopTimer' class
+    state = false; // Reset state
+    return;
   }
-  updateButtonsVisibility();
+
+  let startTime = Date.now();
+  state = true;
+
+  // Update the timer every second
+  intervalId = setInterval(() => {
+    const elapsedTime = Date.now() - startTime;
+    const hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+    const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+
+    const timerText = `${hours
+      .toString()
+      .padStart(2, '0')}:${minutes
+      .toString()
+      .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+    // Update the timer display
+    btnTimer.textContent = timerText;
+    btnTimer.classList.add('stopTimer'); // Add the 'stopTimer' class
+  }, 1000);
 }
 
-// function nextDay() {
-//   currentDay++;
-//   if (currentDay < programData.length) {
-//     const currentDayContent = programData[currentDay].content;
-//     const currentDayNumber = programData[currentDay].day;
-//     setDayContent(currentDayContent, currentDayNumber);
-//   } else {
-//     // If currentDay exceeds the number of days in the program, reset to the last day
-//     currentDay = programData.length - 1;
-//   }
-//   updateButtonsVisibility();
-// }
+function nextDay() {
+  // Ensure fetchProgramData() is called before accessing count
+  fetchProgramData().then(() => {
+    console.log(count);
+    currentDay++;
+    if (currentDay < count) {
+      startProgram();
+    } else {
+      currentDay = count - 1;
+    }
+    updateButtonsVisibility();
+  });
+}
 
-// Function to navigate to the previous day
 function previousDay() {
   currentDay--;
-  if (currentDay <= count) {
+  // stopStopwatch(); // Stop the stopwatch when moving to the previous day
+  if (currentDay >= 0) {
     startProgram();
   } else {
     // If currentDay is negative, reset to the first day
-    currentDay = count - 1;
+    currentDay = 0;
   }
   updateButtonsVisibility();
 }
 
 function updateButtonsVisibility() {
-  if (currentDay === 0) {
-    previousButton.style.display = 'none'; // Hide the previous button
-  } else {
+  if (currentDay != 0) {
     previousButton.style.display = 'inline'; // Show the previous button
   }
 
-  if (currentDay === count - 1) {
+  if (currentDay === 22) {
     nextButton.style.display = 'none'; // Hide the next button
   } else {
     nextButton.style.display = 'inline'; // Show the next button
@@ -137,12 +128,28 @@ function updateButtonsVisibility() {
 
 // Check if the HTML page loaded corresponds to 'program.html'
 if (window.location.pathname.endsWith('program.html')) {
+  updateButtonsVisibility();
   startProgram();
 }
 
+if (window.location.pathname.endsWith('index.html')) {
+  document.getElementById('startBtn').addEventListener('click', () => {
+    window.location.href = 'program.html';
+  });
+}
+
+// Get the stopwatch timer element by its ID
+const stopwatchTimer = document.getElementById('btnTimer');
+
+// Add an event listener to the stopwatch timer
+stopwatchTimer.addEventListener('click', function () {
+  // This function will be called when the stopwatch timer is clicked
+  console.log('Stopwatch timer clicked!');
+});
+
 document.addEventListener('DOMContentLoaded', function () {
   // Get reference to the button
-  var startButton = document.getElementById('startBtn');
+  const startButton = document.getElementById('startBtn');
 
   // Add click event listener to the button
   startButton.addEventListener('click', function () {
