@@ -91,7 +91,7 @@ function startStopwatch() {
 function nextDay() {
   // Ensure fetchProgramData() is called before accessing count
   fetchProgramData().then(() => {
-    console.log(count);
+    
     currentDay++;
     if (currentDay < count) {
       startProgram();
@@ -132,12 +132,6 @@ if (window.location.pathname.endsWith('program.html')) {
   startProgram();
 }
 
-if (window.location.pathname.endsWith('index.html')) {
-  document.getElementById('startBtn').addEventListener('click', () => {
-    window.location.href = 'program.html';
-  });
-}
-
 // Get the stopwatch timer element by its ID
 const stopwatchTimer = document.getElementById('btnTimer');
 
@@ -157,6 +151,10 @@ document.addEventListener('DOMContentLoaded', function () {
     window.location.href = 'program.html';
   });
 });
+
+function start() {
+  window.location.href = 'program.html';
+}
 
 function goToHomePage() {
   window.location.href = 'index.html';
