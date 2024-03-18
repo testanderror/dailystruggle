@@ -157,10 +157,10 @@ document.addEventListener('DOMContentLoaded', function () {
 // coloring title
 
 function getRandomColor() {
-  // Generate random values for red, green, and blue channels
-  const red = Math.floor(Math.random() * 256);
-  const green = Math.floor(Math.random() * 256);
-  const blue = Math.floor(Math.random() * 256);
+  // Generate random values for the red, green, and blue channels within the maroon spectrum
+  const red = Math.floor(Math.random() * 70) + 100; // Adjust these values to fine-tune the maroon color range
+  const green = Math.floor(Math.random() * 30);
+  const blue = Math.floor(Math.random() * 30);
   // Construct the RGB color string
   return `rgb(${red}, ${green}, ${blue})`;
 }
