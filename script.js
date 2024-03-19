@@ -23,24 +23,17 @@ function fetchProgramData() {
     .catch((error) => console.error('Error loading program data:', error));
 }
 
-function setDayContent(content, dayNo) {
-  // Set the text content of the DOM elements
-  const dayNoElement = document.getElementById('title');
-  const dayContent = document.getElementById('content');
-  dayNoElement.innerHTML = dayNo;
-  dayContent.innerHTML = content;
-}
-
 function startProgram() {
   // Fetch the program data from JSON file
-  fetch('data.json')
+  fetch('content.json')
     .then((response) => response.json())
     .then((data) => {
       var outputContainer = document.getElementById('output-container');
       var index = currentDay + 1;
       var output = `<div class='over'><h2><button id='btnTimer'>Day ${index}</button></h2></div>`;
       data[`DAY ${index}`].forEach((entry) => {
-        output += `<p>${entry['MOVEMENT']} @ ${entry['TIME (min)']} min</p>`;
+        output += `<p>${entry['CONTENT']}`;
+        // output += `<p>${entry['MOVEMENT']} @ ${entry['TIME (min)']} min</p>`;
       });
 
       // Paste the output onto the DOM
@@ -175,12 +168,13 @@ function updateOverlayColor() {
   overlay.style.color = getRandomColor(); // Set random color for the title
 }
 
-setInterval(updateTitleColor, 62.5);
-setInterval(updateOverlayColor, 70);
-// Call the updateTitleColor function every 500 milliseconds (0.5 seconds)
-
 function goToHomePage() {
   window.location.href = 'index.html';
+}
+
+if (window.location.href.includes('index.html')) {
+  setInterval(updateTitleColor, 62.5);
+  setInterval(updateOverlayColor, 70);
 }
 
 function start() {
