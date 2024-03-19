@@ -112,7 +112,7 @@ function updateButtonsVisibility() {
     previousButton.style.display = 'inline'; // Show the previous button
   }
 
-  if (currentDay === 22) {
+  if (currentDay === 27) {
     nextButton.style.display = 'none'; // Hide the next button
   } else {
     nextButton.style.display = 'inline'; // Show the next button
